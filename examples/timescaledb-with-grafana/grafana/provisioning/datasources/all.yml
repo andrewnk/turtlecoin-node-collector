@@ -1,0 +1,20 @@
+apiVersion: 1
+
+datasources:
+- name: nodes
+  type: postgres
+  url: "nodes-db:5432"
+  database: nodes
+  access: proxy
+  user: client
+  version: 1
+  editable: true
+  basicAuth: false
+  isDefault: true
+  withCredentials: false
+  secureJsonData:
+    password: 98765
+  jsonData:
+    sslmode: disable
+    timescaledb: true
+    postgresVersion: 1100

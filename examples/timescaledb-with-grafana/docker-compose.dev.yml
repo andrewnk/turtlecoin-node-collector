@@ -1,0 +1,8 @@
+version: "3"
+
+services:
+  nodes-service:
+    volumes:
+      - ${PWD}/service/node:/home/node/node
+      - ${PWD}/service/src:/home/node/example
+    command: tail -f /dev/null

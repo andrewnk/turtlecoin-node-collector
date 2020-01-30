@@ -1,0 +1,59 @@
+version: "3"
+
+services:
+  nodes-db:
+    build:
+      context: ./db
+      args:
+        SERVICE_PASSWORD: 98765
+        CLIENT_PASSWORD: 98765
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=123456
+    container_name: nodes-db
+    volumes:
+      - nodes-db:/var/lib/postgresql/data
+    networks:
+      - nodes-service
+
+  nodes-service:
+    build:
+      context: ./service
+      args:
+        DB_USER: service
+        DB_NAME: nodes
+        DB_PASSWORD: 98765
+        DB_HOST: nodes-db
+        DB_PORT: 5432
+    container_name: nodes-service
+    restart: always
+    networks:
+      - nodes-service
+    depends_on:
+      - nodes-db
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: 'grafana'
+    ports:
+      - '3000:3000'
+    networks:
+      - nodes-service
+    volumes:
+      - grafana-nodes-storage:/var/lib/grafana
+      - ./grafana/provisioning/datasources:/etc/grafana/provisioning/datasources
+    environment:
+      - GF_SERVER_ENABLE_GZIP=true
+
+networks:
+  nodes-service:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+      - subnet: 172.21.0.0/16
+
+volumes:
+  nodes-db:
+  grafana-nodes-storage:

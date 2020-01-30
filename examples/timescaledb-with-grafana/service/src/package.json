@@ -1,0 +1,14 @@
+{
+  "name": "turtlecoin-node-collector-timescaledb-grafana-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "turtlecoin-node-collector": "github:andrewnk/turtlecoin-node-collector#master"
+  }
+}

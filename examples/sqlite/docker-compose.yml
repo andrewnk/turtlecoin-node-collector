@@ -1,0 +1,8 @@
+version: "3"
+
+services:
+  nodes-service:
+    build:
+      context: ./service
+    container_name: nodes-service
+    restart: always

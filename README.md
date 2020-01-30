@@ -1,3 +1,3 @@
 # TurtleCoin Node Collector
 
-TurtleCoin Node Collector collects TurtleCoin network data from public nodes and saves it in one of a number of different databases such as MySQL, MariaDB, PostgreSQL, MS SQL, SQLite (using [Sequelize](https://github.com/sequelize/sequelize/)). You can either use the built in Collector class or create your own collector using the existing Node and NodeData models and classes.
+TurtleCoin Node Collector collects TurtleCoin network data from public nodes and saves it in one of a number of different databases such as MySQL, MariaDB, PostgreSQL, MS SQL, SQLite (using [Sequelize](https://github.com/sequelize/sequelize/)). [Examples] (https://github.com/andrewnk/turtlecoin-node-collector/examples).
