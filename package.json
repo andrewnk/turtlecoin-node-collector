@@ -1,0 +1,38 @@
+{
+  "name": "turtlecoin-node-collector",
+  "version": "0.0.1",
+  "description": "Data collector for TurtleCoin nodes",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrewnk/turtlecoin-node-collector.git"
+  },
+  "keywords": [
+    "TurtleCoin",
+    "nodes",
+    "sequelize",
+    "mysql",
+    "mssql",
+    "postgres",
+    "sqlite",
+    "api"
+  ],
+  "author": "The TurtleCoin Developers",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "esm": "^3.2.25",
+    "mariadb": "^2.1.4",
+    "mysql2": "^2.0.2",
+    "node-fetch": "^2.6.0",
+    "pg": "^7.14.0",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^5.21.2",
+    "set-interval-async": "1.0.29",
+    "sqlite3": "^4.1.1",
+    "tedious": "^6.6.2",
+    "winston": "^3.2.1"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0"
+  }
+}
